@@ -1,0 +1,713 @@
+/* Общие стили */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    color: #e0e0e0;
+    background-color: #1a1a2e;
+    transition: background-color 0.3s ease;
+    overflow-x: hidden;
+    /* Убирает горизонтальную полосу прокрутки */
+}
+
+.conteiner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.conteiner_2 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.conteiner_3 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Шапка */
+.header {
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.header_logo {
+    width: 120px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.header_logo:hover {
+    transform: scale(1.1);
+}
+
+.header_nav {
+    flex: 1;
+    text-align: center;
+}
+
+.header_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header_list li {
+    display: inline;
+    margin: 0 25px;
+}
+
+.header_list li a {
+    color: #d4d4d4;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header_list li a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.header_list li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.header_list li a:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+/* Главный контент */
+.main {
+    background: #1a1a2e;
+    padding: 40px 0;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+
+/* Секция приветствия */
+.welcome {
+    background-image: url(../Image/pic.webp);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 140px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7px);
+}
+
+.welcome_simbit {
+    font-size: 4.5em;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 1s ease-out;
+    color: #fff;
+}
+
+.does {
+    font-size: 1.4em;
+    margin-bottom: 50px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+    color: #d4d4d4;
+}
+
+.btn {
+    background: linear-gradient(to right, #6a00ff, #9e59ff);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+    animation: zoomIn 1s ease-out;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #5a00d7, #864ae1);
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Секция советов */
+.welcome_you {
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+}
+
+
+.text_about h1 {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    position: relative;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+.text_about p {
+    font-size: 1.2em;
+    max-width: 70%;
+    margin: 0 auto 50px;
+    color: #c0c0c0;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Карточки */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -15px;
+}
+
+.card {
+    width: 30%;
+    min-width: 300px;
+    background: #2b2b41;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #4a00e0, #6a00ff);
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.card:hover::before {
+    opacity: 0.5;
+}
+
+.card__body {
+    position: relative;
+    z-index: 1;
+}
+
+.card__title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card__title {
+    color: #70e1f5;
+}
+
+.card__doer {
+    color: #e0e0e0;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card__doer {
+    color: #fff;
+}
+
+/* Секция гайдов */
+.gaids {
+    padding: 80px 0;
+    text-align: center;
+    background: #22223b;
+    position: relative;
+}
+
+.text_gaid {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+.does_gaid {
+    font-size: 1.3em;
+    max-width: 70%;
+    margin: 0 auto 40px;
+    color: #c0c0c0;
+    animation: fadeIn 1s ease-out;
+}
+
+.h3_gaid {
+    font-size: 2.2em;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: #fff;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.p_gaid {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    text-align: left;
+    margin-left: 30px;
+    max-width: 70%;
+    color: #e0e0e0;
+}
+
+.img_gaid {
+    display: block;
+    max-width: 70%;
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img_gaid:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.ol_gaid {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.ul_gaid {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.text_game {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+.does_game {
+    font-size: 1.3em;
+    max-width: 70%;
+    margin: 0 auto 40px;
+    color: #c0c0c0;
+    animation: fadeIn 1s ease-out;
+}
+
+.h3_game {
+    font-size: 2.2em;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: #fff;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.p_game {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    text-align: left;
+    margin-left: 30px;
+    max-width: 70%;
+    color: #e0e0e0;
+}
+
+.img_game {
+    display: block;
+    max-width: 70%;
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img_game:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+
+
+.footer {
+    background: linear-gradient(135deg, #111111, #222222);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer h3 {
+    font-size: 24px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff4d4d;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+    }
+}
+
+.footer .section {
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.footer a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer a:hover {
+    color: #ff4d4d;
+    transform: scale(1.05);
+}
+
+.footer .icon {
+    margin-right: 5px;
+    color: #ff4d4d;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.footer .copyright {
+    font-size: 14px;
+    color: #888888;
+    margin-top: 20px;
+}
+
+
+/* Медиа-запросы (адаптивность) */
+@media (max-width: 900px) {
+    .card {
+        width: 45%;
+    }
+
+    .welcome {
+        padding: 100px 0;
+    }
+
+    .main {
+        padding: 30px 0;
+    }
+
+    .gaids {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .header_logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .header_nav {
+        text-align: center;
+    }
+
+    .header_list li {
+        display: block;
+        margin: 12px 0;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .welcome {
+        padding: 50px 0;
+    }
+
+    .does {
+        max-width: 90%;
+    }
+
+    .text_about p {
+        max-width: 90%;
+    }
+
+    .does_gaid {
+        max-width: 90%;
+    }
+
+    .p_gaid {
+        max-width: 90%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .h3_gaid {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .ol_gaid {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .ul_gaid {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .img_gaid {
+        max-width: 90%;
+    }
+
+
+    .does_review {
+        max-width: 90%;
+    }
+
+    .p_game {
+        max-width: 90%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .h3_game {
+        margin-left: 0;
+        text-align: center;
+    }
+
+
+
+    .img_game {
+        max-width: 90%;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer h3 {
+        font-size: 20px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .footer .social-icons a {
+        margin: 0 8px;
+        font-size: 18px;
+    }
+
+
+
+    .text_gaid {
+        font-size: 2.5em;
+    }
+
+    .welcome_simbit {
+        font-size: 3em;
+    }
+
+    .text_about h1 {
+        font-size: 2.5em;
+    }
+}
+
+
+/* Анимации */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fogMove {
+    from {
+        background-position: 0 bottom;
+    }
+
+    to {
+        background-position: 1000px bottom;
+    }
+
+    @keyframes glow {}
+
+    from {
+        text-shadow: 0 0 10px #ff4d4d;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+    }
+
+
+    .footer .section {
+        margin-bottom: 20px;
+    }
+
+    .footer p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .footer a {
+        color: #00aaff;
+        text-decoration: none;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .footer a:hover {
+        color: #ff4d4d;
+        transform: scale(1.05);
+    }
+
+    .footer .icon {
+        margin-right: 5px;
+        color: #ff4d4d;
+    }
+
+    .footer .social-icons a {
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+    .footer .copyright {
+        font-size: 14px;
+        color: #888888;
+        margin-top: 20px;
+    }
